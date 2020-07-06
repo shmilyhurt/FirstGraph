@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'MyGraph.apps.MygraphConfig',
+    'graphene_django',
+    'MyGraph'
 ]
 
 MIDDLEWARE = [
@@ -55,8 +56,7 @@ ROOT_URLCONF = 'MyFirstGraph.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')]
-        ,
+        'DIRS': [],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -71,6 +71,9 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'MyFirstGraph.wsgi.application'
 
+GRAPHENE = {
+    'SCHEMA': 'MyGraph.schema.schema'
+}
 
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
